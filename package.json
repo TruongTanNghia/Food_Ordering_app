@@ -16,7 +16,21 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "prepare": "chmod +x .husky/pre-commit && chmod +x .husky/commit-msg && husky install",
+    "pre-commit": "echo \"[Husky] pre-commit\"",
+    "server": "json-server --watch ./database/db.json  --routes ./database/routes.json --port 5000"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -37,6 +51,9 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.7.2",
+    "@commitlint/config-conventional": "^17.7.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
     "tailwindcss": "^3.3.3"
   }
 }
