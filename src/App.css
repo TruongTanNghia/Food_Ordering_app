@@ -1,16 +1,19 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  overflow: hidden;
+    overflow: hidden;
 }
-#root{
-  height: 100%;
+#root {
+    height: 100%;
 }
-.App{
-  height: 100vh;
-  background-color: black;
+.App {
+    height: 100vh;
+    background-color: rgb(92, 46, 46);
+}
+h1 {
+    color: aqua;
 }
